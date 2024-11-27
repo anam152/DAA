@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void selection_sort(int arr[],int n){
     for(int i =0;i<n-1;i++){
@@ -27,8 +28,23 @@ void print(int arr[],int n){
 }
 
 int main(){
-    int n = 9;
-    int arr[] = {9,8,7,6,5,4,3,2,1};
+    int n;
+
+    printf("enter the size of array: ");
+    scanf("%d",&n);
+
+    //dynamically allocating the memory
+    int * arr = (int*)malloc(n*sizeof(int));
+    if(arr == NULL){
+        printf("memory allocation failed");
+        return 0;
+    }
+
+    //input user data
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+
     selection_sort(arr,n);
     print(arr,n);
 }
