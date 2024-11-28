@@ -1,5 +1,14 @@
 # include <stdio.h>
+# define size 100
 
+void Display(int A[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        printf("%d\t", A[i]);
+    }
+    printf("\n");
+}
 void swap(int *a, int *b)
 {
     int temp = *a;
@@ -27,14 +36,20 @@ void Insertion(int A[], int n)
 
 int main()
 {
-    int A[] = {19, 3, 9, 10, 15, 6, 8, 12, 3, 6};
+    int n = 0;
+    printf("Enter the number of elements to be sorted\n");
+    scanf("%d", &n);
 
-  Insertion(A,10);
-    for (int i = 0; i < 10; i++)
+    int A[size];
+    printf("Enter elements to be sorted\n");
+    for(int i = 0; i < n; i++)
     {
-        printf("%d\t", A[i]);
+        scanf("%d", &A[i]);
     }
-    printf("\n");
+
+
+  Insertion(A,n);
+  Display(A,n);
        
     return 0;
 }
