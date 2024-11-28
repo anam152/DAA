@@ -1,4 +1,13 @@
 # include <stdio.h>
+# define size 100
+
+void Display(int A[], int n){
+    for(int i = 0; i < n; i++)
+    {
+        printf("%d\t", A[i]);
+    }
+    printf("\n");
+}
 
 void swap(int *a, int *b)
 {
@@ -9,29 +18,37 @@ void swap(int *a, int *b)
 
 void Selection(int A[], int n)
 {
-    int i, j, k;
+    int i, j, minindex;
     for (i = 0; i < n - 1; i++)
     {
-        j = k = i;
-        while (j < n)
+         minindex = i;
+        for (j = i + 1; j < n; j++)
         {
-            if (A[j] < A[k])
-                k = j;
-            j++;
+            if (A[j] < A[minindex])
+                minindex = j;
+            
         }
-        swap(&A[k], &A[i]);
+        if(minindex!=i)
+        swap(&A[minindex], &A[i]);
     }
 }
 int main()
 {
-    int A[] = {6, 3, 9, 10, 15, 6, 8, 12, 3, 6};
+    int n = 0;
+    printf("Enter the number of elements to be sorted\n");
+    scanf("%d", &n);
 
-  Selection(A,10);
-    for (int i = 0; i < 10; i++)
+    int A[size];
+    printf("Enter elements to be sorted\n");
+    for(int i = 0; i < n; i++)
     {
-        printf("%d\t", A[i]);
+        scanf("%d", &A[i]);
     }
-    printf("\n");
+
+
+  Selection(A,n);
+    Display(A,n);
+    
        
     return 0;
 }
