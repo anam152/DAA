@@ -1,23 +1,19 @@
 # include <stdio.h>
-# define size 100
+# include <stdlib.h>
 
-void Display(int A[], int n)
+
+void Display(int *a, int n)
 {
     for(int i = 0; i < n; i++)
     {
-        printf("%d\t", A[i]);
+        printf("%d\t", a[i]);
     }
     printf("\n");
 }
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
 
 
-void Insertion(int A[], int n)
+
+void Insertion(int *A, int n)
 {
     int i, j, x;
     for (int i = 1; i < n; i++)
@@ -39,17 +35,24 @@ int main()
     int n = 0;
     printf("Enter the number of elements to be sorted\n");
     scanf("%d", &n);
+    if(n == 0)
+    {
+        printf("Invalid input\n");
+        return 0;
+    }
 
-    int A[size];
+    int *a;
+    a = (int*)malloc(sizeof(int) * n);
+
     printf("Enter elements to be sorted\n");
     for(int i = 0; i < n; i++)
     {
-        scanf("%d", &A[i]);
+        scanf("%d", &a[i]);
     }
-
-
-  Insertion(A,n);
-  Display(A,n);
+    Display(a,n);
+    Insertion(a,n);
+    printf("After performing insertion sort, the array is:\n");
+    Display(a,n);
        
     return 0;
 }
