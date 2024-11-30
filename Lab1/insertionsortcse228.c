@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void insertionsort(int arr[],int n){
     int i,j,key;
     for(i=1;i<n;i++){ 
@@ -18,9 +19,20 @@ void printarray(int arr[],int n){
     printf("\n");
 }
 int main(){
-    int arr[]={10,23,54,67,43,2};
-    int n=6;
+    int n;
+    printf("enter the no of elements");
+    scanf("%d",&n);
+    if(n==0){
+        printf("invalid input");
+        return 0;
+    }
+    int *arr=(int *)malloc(sizeof(int)*n);
+    printf("Enter the elements");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
     printarray(arr,n);
     insertionsort(arr,n);
+    printf("After insertionsort,the array is:\n");
     printarray(arr,n);
 }
