@@ -3,12 +3,16 @@ Introduction
 This repository contains laboratory exercises, programs, and resources related to the Design and Analysis of Algorithms (DAA) course. It is a fork of the original repository https://github.com/anam152/DAA.git?authuser=1 and has been customized to suit personal or institutional requirements.
 
 Purpose
+
+
 The repository serves the following purposes:
 
 To provide implementations of fundamental algorithms.
 To demonstrate theoretical concepts practically.
 To offer a platform for further learning and exploration in algorithm design.
 Contents
+
+
 The repository includes:
 
 Sorting Algorithms: Implementations of Bubble Sort, Merge Sort, Quick Sort, etc.
