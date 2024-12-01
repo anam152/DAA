@@ -26,8 +26,18 @@ void printArray(int arr[], int n) {
 
 // Main function
 int main() {
-    int arr[] = {12, 11, 13, 5, 6}; // Sample array
-    int n = sizeof(arr) / sizeof(arr[0]);
+   // Sample array
+    int n;
+    printf("Enter the size of array\n");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements of array\n");
+
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+
+    }
+
 
     printf("Original array: \n");
     printArray(arr, n);
