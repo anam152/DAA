@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 void insertionsort(int a[],int n){
-    int i,x,key;
+    int i,j,key;
     for(i=1;i<n;i++){ 
         key=a[i];
-        x=i-1;
-        while(x>=0 && a[x]>key){ 
-            a[x+1]=a[x];  
+        j=i-1;
+        while(x>=0 && a[j]>key){ 
+            a[j+1]=a[j];  
             x--;
         }
-        a[x+1]=key;
+        a[j+1]=key;
     }
 }
 void printarray(int a[],int n){
