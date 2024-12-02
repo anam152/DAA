@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+// Function to print the array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+// Function to perform insertion sort
+void insertionSortHumanLike(int arr[], int n) {
+    printf("Original array: ");
+    printArray(arr, n);
+
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        printf("\nPicking up element %d from position %d.\n", key, i);
+
+        // Shift elements of the sorted segment to the right to make room for the key
+        while (j >= 0 && arr[j] > key) {
+            printf("Comparing %d with %d. Moving %d to the right.\n", key, arr[j], arr[j]);
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        // Insert the key into the correct position
+        arr[j + 1] = key;
+        printf("Placing %d at position %d.\n", key, j + 1);
+
+        // Print the array after each step
+        printf("Array after step %d: ", i);
+        printArray(arr, n);
+    }
+
+    printf("\nSorted array: ");
+    printArray(arr, n);
+}
+
+int main() {
+    int arr[] = {12, 11, 13, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    insertionSortHumanLike(arr, n);
+
+    return 0;
+}
