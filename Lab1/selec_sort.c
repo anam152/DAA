@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 void selectionsort(int arr[],int n){
-    int i,b,minimum,temp;
+    int i,j,minimum,temp;
     for(i=0;i<n-1;i++){ 
         minimum=i;
-        for(b=i+1;b<n;b++){ 
-           if(arr[b]<arr[minimum]) 
-              minimum=b; 
+        for(b=i+1;j<n;j++){ 
+           if(arr[j]<arr[minimum]) 
+              minimum=j; 
         }
         if(minimum != i){
         temp=arr[i];
