@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+// Function to print the array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+// Function to perform selection sort
+void selectionSortHumanLike(int arr[], int n) {
+    printf("Original array: ");
+    printArray(arr, n);
+
+    for (int i = 0; i < n - 1; i++) {
+        // Assume the current element is the smallest
+        int minIndex = i;
+        printf("\nLooking at position %d (value: %d):\n", i, arr[i]);
+
+        // Search for the smallest element in the remaining unsorted part
+        for (int j = i + 1; j < n; j++) {
+            printf("Comparing %d (current smallest) with %d.\n", arr[minIndex], arr[j]);
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j; // Found a new smallest element
+                printf("Found new smallest value: %d at position %d.\n", arr[minIndex], minIndex);
+            }
+        }
+
+        // Swap if a smaller element was found
+        if (minIndex != i) {
+            printf("Swapping %d and %d.\n", arr[i], arr[minIndex]);
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        } else {
+            printf("No need to swap, %d is already the smallest.\n", arr[i]);
+        }
+
+        // Print the array after each step
+        printf("Array after step %d: ", i + 1);
+        printArray(arr, n);
+    }
+
+    printf("\nSorted array: ");
+    printArray(arr, n);
+}
+
+int main() {
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    selectionSortHumanLike(arr, n);
+
+    return 0;
+}
