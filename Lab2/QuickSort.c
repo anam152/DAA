@@ -40,12 +40,12 @@ void quickSort(int arr[], int low, int high) {
 int main() {
     int size;
 
-    printf("Enter the size of the array: ");
+    printf("Enter the size of the arr: ");
     scanf("%d", &size);
 
     int arr[size];
 
-    printf("Enter %d elements of the array:\n", size);
+    printf("Enter %d elements of the arr:\n", size);
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
     }
