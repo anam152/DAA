@@ -20,6 +20,7 @@ void printArray(int arr[], int n) {
 }
 
 int main() {
+<<<<<<< HEAD
    int n;
    printf("Enter the size of an array");
    scanf("%d" , &n);
@@ -28,6 +29,16 @@ int main() {
    for(int i=0;i<n;i++){
     scanf("%d" , &arr[i]);
    }
+=======
+    int n;
+     printf("Enter the array size");
+     scanf("%d" ,&n);
+     int array[n];
+     printf("Enter the size of array");
+     for(int i=0;i<n;i++){
+        printf("%d" , array[i]);
+     }
+>>>>>>> 142649a1918da1fecbaec67d01b8c4ce6e85b1fe
     insertionSort(arr, n);
     printArray(arr, n);
     return 0;
